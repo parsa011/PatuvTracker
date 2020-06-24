@@ -45,7 +45,6 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
          data.append('userAppVersion',navigator.appVersion);
          data.append('userPlatform',navigator.platform);
          data.append('userAgent',navigator.userAgent);
-         data.append('userPlatform',navigator.platform);
          var req = fetch('https://localhost:44372/Home/Index',{
             method: 'POST',
             body: data
