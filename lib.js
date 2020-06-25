@@ -1,4 +1,4 @@
-const APP_ID = "asdfasdfasdf";
+var APP_ID = "";
 var userData;
 
 window.onload = function () {
@@ -103,12 +103,18 @@ window.onload = function () {
        * Initialize Patuv
        */
       init: function (config) {
+         if(config){
+            APP_ID = config.APP_ID;
+         }else{
+            throw new Error('please fill APP_ID for patuv');
+         }
+         
          var me = this;
-
+         
          if (me.inited) {
             return;
          }
-
+      
          me.applyConfig(config || {});
 
          me.initOnError();
@@ -159,6 +165,7 @@ window.onload = function () {
                report.userCity = userData.geoplugin_city;
             };
             report.APP_ID = APP_ID;
+            console.log(userData);
             console.log(report);
             if (me.params) {
                for (var p in me.params) {
