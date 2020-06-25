@@ -104,11 +104,11 @@ window.onload = function () {
        */
       init: function (config) {
          if(config){
-            APP_ID = config.APP_ID;
+            APP_ID = config.APP_ID || config.app_id;
          }else{
             throw new Error('please fill APP_ID for patuv');
          }
-         
+
          var me = this;
          
          if (me.inited) {
