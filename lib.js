@@ -7,7 +7,6 @@ window.onload = function () {
    xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
          userData = JSON.parse(this.responseText.slice(callBackFunc.length + 1, this.responseText.length - 1));
-         console.log(userData);
       }
    };
    xhttp.open("GET", "http://www.geoplugin.net/json.gp?jsoncallback=" + callBackFunc, true);
@@ -165,8 +164,7 @@ window.onload = function () {
                report.userCity = userData.geoplugin_city;
             };
             report.APP_ID = APP_ID;
-            console.log(userData);
-            console.log(report);
+
             if (me.params) {
                for (var p in me.params) {
                   report[p] = me.params[p];
