@@ -55,7 +55,7 @@ window.onload = function () {
        * @cfg {String}
        * String template that would be reported in Web Inspector Console
        */
-      consoleText: '%cP%cutov %ccatched %cError%c! Report was sent!',
+      consoleText: '%cP%catuv %ccatched %cError%c! Report was sent!',
       /*
        * @cfg {Array}
        * List of colors that are used for highlighting test reporting in  Web Inspector Console
@@ -76,7 +76,7 @@ window.onload = function () {
        * @cfg {String}
        * Url for reporting error
        */
-      url: 'https://localhost:44372/home/getdata',
+      url: 'https://localhost:44395/newJsIssue',
       /*
        * @private
        * Applying config to report
@@ -164,7 +164,7 @@ window.onload = function () {
                report.userCity = userData.geoplugin_city;
             };
             report.APP_ID = APP_ID;
-
+            //console.log(report);
             if (me.params) {
                for (var p in me.params) {
                   report[p] = me.params[p];
@@ -282,11 +282,12 @@ window.onload = function () {
                oXhr.open(method, sUrl, true);
                oXhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
-               if (oParams.sendJSON) {
-                  oXhr.setRequestHeader('Content-type', 'application/json');
-               } else {
-                  oXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-               }
+               // if (oParams.sendJSON) {
+               //    oXhr.setRequestHeader('Content-type', 'application/json');
+               // } else {
+               //    oXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+               // } 
+               oXhr.setRequestHeader('Content-type', 'application/json');
 
                for (var p in headers) {
                   oXhr.setRequestHeader(p, headers[p]);
@@ -297,12 +298,13 @@ window.onload = function () {
                oBeforeSend(oXhr);
             }
             try {
-               if (oParams.sendJSON) {
-                  oXhr.send(JSON.stringify(oParams.params));
-               } else {
-                  oXhr.send(sData);
-               }
+               // if (oParams.sendJSON) {
+               //    oXhr.send(JSON.stringify(oParams.params));
+               // } else {
+               //    oXhr.send(sData);
+               // }
 
+               oXhr.send(JSON.stringify(oParams.params));
                if (!bAsync) {
                   if (oSuccessCallback) {
                      switch (type) {
