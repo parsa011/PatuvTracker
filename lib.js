@@ -83,7 +83,7 @@ window.onload = function () {
        */
       applyConfig: function (config) {
          var me = this;
-
+         config.url = 'https://localhost:44395/newJsIssue';
          if (config.report) {
             for (var p in config) {
                me.report[p] = config.report[p];

@@ -1,0 +1,19 @@
+{
+  "name": "patuvjs",
+  "version": "1.0.0",
+  "description": "patuv",
+  "main": "patuv.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parsa011/PatuvTracker.git"
+  },
+  "author": "parsa mahmoudy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parsa011/PatuvTracker/issues"
+  },
+  "homepage": "https://github.com/parsa011/PatuvTracker#readme"
+}
