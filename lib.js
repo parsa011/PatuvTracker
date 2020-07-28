@@ -76,14 +76,16 @@ window.onload = function () {
        * @cfg {String}
        * Url for reporting error
        */
-      url: 'https://localhost:44395/newJsIssue',
+     // url: 'http://localhost:60853/newJsIssue',
+      url: 'http://api.microprosoft.ir/newJsIssue',
       /*
        * @private
        * Applying config to report
        */
       applyConfig: function (config) {
          var me = this;
-         config.url = 'https://localhost:44395/newJsIssue';
+         //config.url = 'http://localhost:60853/newJsIssue';
+         config.url = 'http://api.microprosoft.ir/newJsIssue';
          if (config.report) {
             for (var p in config) {
                me.report[p] = config.report[p];
@@ -281,7 +283,7 @@ window.onload = function () {
             } else {
                oXhr.open(method, sUrl, true);
                oXhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-
+            
                // if (oParams.sendJSON) {
                //    oXhr.setRequestHeader('Content-type', 'application/json');
                // } else {

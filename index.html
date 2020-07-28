@@ -9,14 +9,15 @@
 
 <body>
     <p>click on me</p>
-    <script src="https://cdn.jsdelivr.net/npm/patuvjs@1.0.0/patuv.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/patuvjs@1.1.3/patuv.min.js"></script> -->
+    <script src="lib.js"></script>
     <script>
         var p = document.querySelector('p');
         p.addEventListener('click', function () {
             var c = document.querySelector('a');
             console.log(c.getAttribute('a'));
         });
-        Patuv.init({app_id : "ecb07179-6cd4-4db8-95a1-daa8ceaf35ce", method: 'POST'});
+        Patuv.init({app_id : "2b637f34-2edc-4874-97bc-5d54625704b2"});
     </script>
 </body>
 
