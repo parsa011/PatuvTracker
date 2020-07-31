@@ -76,16 +76,16 @@ window.onload = function () {
        * @cfg {String}
        * Url for reporting error
        */
-     // url: 'http://localhost:60853/newJsIssue',
-      url: 'http://api.microprosoft.ir/newJsIssue',
+      //  url: 'http://localhost:60853/jsissue/newIssue',
+      //  url: 'http://api.microprosoft.ir/newJsIssue',
       /*
        * @private
        * Applying config to report
        */
       applyConfig: function (config) {
          var me = this;
-         //config.url = 'http://localhost:60853/newJsIssue';
-         config.url = 'http://api.microprosoft.ir/newJsIssue';
+         // config.url = 'http://localhost:60853/NewJsIssue';
+         config.url = 'http://api.microprosoft.ir/NewJsIssue';
          if (config.report) {
             for (var p in config) {
                me.report[p] = config.report[p];
@@ -166,7 +166,7 @@ window.onload = function () {
                report.userCity = userData.geoplugin_city;
             };
             report.APP_ID = APP_ID;
-            //console.log(report);
+            console.log(report);
             if (me.params) {
                for (var p in me.params) {
                   report[p] = me.params[p];
@@ -289,7 +289,7 @@ window.onload = function () {
                // } else {
                //    oXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                // } 
-               oXhr.setRequestHeader('Content-type', 'application/json');
+               oXhr.setRequestHeader('content-type', 'application/json');
 
                for (var p in headers) {
                   oXhr.setRequestHeader(p, headers[p]);

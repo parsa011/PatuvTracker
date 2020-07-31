@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test my api</title>
+</head>
+
+<body>
+
+    <p id="demo">
+        Result :
+    </p>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Typical action to be performed when the document is ready:
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+            }
+        };
+        // var json = {
+        //     "APP_ID": "2b637f34-2edc-4874-97bc-5d54625704b2",
+        //     "browser": "Chrome 84",
+        //     "columnNumber": 27,
+        //     "errorName": "TypeError",
+        //     "errorStack": "TypeError: Cannot readnt.<anonymous> /Desktop/clientsideElmah/index.html:18:27)",
+        //     "errorText": "Uncaught TypeError: Cannot read property 'getAttribute' of null",
+        //     "lineNumber": 18,
+        //     "mobile": false,
+        //     "os": "Windows 10",
+        //     "url": "file:///C:/Users/parsa/OneDrive/Desktop/clientsideElmah/index.html",
+        //     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+        // }
+        var json = {
+            "name" : "58bbc1da-45f3-4b37-9fb3-a59a29d2867c"
+        }
+        xhttp.open("POST", "http://api.microprosoft.ir/jsissue/NewIssue", true);
+        //xhttp.open("POST", "http://localhost:60853/GetData", true);
+        //xhttp.setRequestHeader('Content-Type', 'application/json');
+        xhttp.send();
+    </script>
+</body>
+
+</html>

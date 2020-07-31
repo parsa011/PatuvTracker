@@ -1,6 +1,6 @@
 {
   "name": "patuvjs",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "patuv",
   "main": "patuv.min.js",
   "scripts": {
