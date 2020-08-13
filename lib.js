@@ -5,7 +5,7 @@ window.onload = function () {
    var callBackFunc = "userInfoCallBack"
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
+      if (this.readyState === 4 && this.status === 200) {
          userData = JSON.parse(this.responseText.slice(callBackFunc.length + 1, this.responseText.length - 1));
       }
    };
@@ -23,7 +23,6 @@ window.onload = function () {
    }
 }(this, function (window) {
    var Patuv = function () {};
-
    Patuv.prototype = {
       /*
        * @private
@@ -76,16 +75,16 @@ window.onload = function () {
        * @cfg {String}
        * Url for reporting error
        */
-      //  url: 'http://localhost:60853/jsissue/newIssue',
-      //  url: 'http://api.microprosoft.ir/newJsIssue',
+      //  url: 'https://localhost:60853/jsissue/newIssue',
+      //  url: 'https://api.patuv.ir/newJsIssue',
       /*
        * @private
        * Applying config to report
        */
       applyConfig: function (config) {
          var me = this;
-         // config.url = 'http://localhost:60853/NewJsIssue';
-         config.url = 'http://api.microprosoft.ir/NewJsIssue';
+          config.url = 'https://localhost:60853/NewJsIssue';
+        // config.url = 'https://api.patuv.ir/NewJsIssue';
          if (config.report) {
             for (var p in config) {
                me.report[p] = config.report[p];
@@ -164,11 +163,10 @@ window.onload = function () {
                report.userCountry = userData.geoplugin_countryName;
                report.userIpAddress = userData.geoplugin_request;
                report.userCity = userData.geoplugin_city;
-            };
+            }
             report.APP_ID = APP_ID;
-            console.log(report);
             if (me.params) {
-               for (var p in me.params) {
+               for (let p in me.params) {
                   report[p] = me.params[p];
                }
             }
