@@ -75,7 +75,7 @@ window.onload = function () {
        * @cfg {String}
        * Url for reporting error
        */
-      //  url: 'https://localhost:60853/jsissue/newIssue',
+      //  url: 'https://localhost:44398/jsissue/newIssue',
       //  url: 'https://api.patuv.ir/newJsIssue',
       /*
        * @private
@@ -83,8 +83,8 @@ window.onload = function () {
        */
       applyConfig: function (config) {
          var me = this;
-          config.url = 'https://localhost:60853/NewJsIssue';
-        // config.url = 'https://api.patuv.ir/NewJsIssue';
+        //   config.url = 'https://localhost:44398/NewJsIssue';
+        config.url = 'https://api.patuv.ir/NewJsIssue';
          if (config.report) {
             for (var p in config) {
                me.report[p] = config.report[p];
